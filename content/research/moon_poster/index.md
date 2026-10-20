@@ -1,21 +1,10 @@
 ---
-title: moon map
-description: A map and the details behind it.
-type: Map
-order: 5
-coverAlt: Illustrative contour map with a river and three sample locations.
-example: false
+title: Lunar geologic mapping
+type: Poster
+order: 3
+cover: ./preview.webp
+coverAlt: "GSA poster: Can Semi-Automated Machine Learning Methods Standardize Lunar Geologic Mapping and Improve the Efficiency of Exploration Site Characterization?"
 ---
-![Illustrative contour map with a river and three sample locations.](./map.svg)
+[![Can Semi-Automated Machine Learning Methods Standardize Lunar Geologic Mapping and Improve the Efficiency of Exploration Site Characterization? Open the full-size poster.](./preview.webp)](./poster.png)
 
-*Figure 1. An illustrative map, created for this template. It does not represent a real study area or dataset.*
-
-## Overview
-
-Replace this example with your map and a short description of the place, question, or data it shows.
-
-## Notes
-
-You can add images, tables, and links here. Keep the files in this same folder.
-
-[Open the full-size map](./map.svg)
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

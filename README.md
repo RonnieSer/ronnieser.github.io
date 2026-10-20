@@ -22,7 +22,7 @@ content/
     cv.pdf                    # Optional; add your own
 ```
 
-**Add research:** copy one of the four example folders in `content/research/`, rename it using lowercase words and hyphens, and edit `index.md`. Replace its images with yours. A minimal entry is:
+**Add research:** copy one of the existing folders in `content/research/`, rename it using lowercase words and hyphens, and edit `index.md`. Replace its images with yours. A minimal entry is:
 
 ```markdown
 ---
@@ -52,7 +52,7 @@ That is all you need. Research automatically appears on the Research page. `type
 
 **Hide unfinished work:** add `draft: true` to its frontmatter and remove it from Home's `selected` list. Its page and files will be excluded from the build. Files inside a published content folder are public, including unlinked attachments.
 
-**Remove the samples:** delete the `sample-*` folders and replace Home's `selected` list. The four examples are clearly labeled as examples; their maps and charts are illustrations, not actual findings. When replacing a sample, remove `example: true`.
+**Edit the posters:** each poster folder contains `index.md`, the full-resolution `poster.png`, and a smaller `preview.webp` for fast page loading. The preview opens the full PNG when clicked. Replace the Lorem ipsum paragraph in `index.md` with your own writing. Keep the images in the same folder as the Markdown file.
 
 Use ordinary Markdown for headings, lists, images, links, tables, and code. Image links keep the original proportions and local raster images are optimized by Astro. Keep images reasonably sized; export a thumbnail image for a PDF poster and link to the full PDF. Attachments can be PDF, PowerPoint, CSV, text, BibTeX, ZIP, common images, MP4, or WebM. Prefer lowercase file names without spaces. Missing local files and broken selected entries fail the build with a clear error.
 
