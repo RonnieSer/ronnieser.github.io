@@ -77,9 +77,9 @@ The output is ordinary HTML and CSS in `dist/`, with no browser JavaScript, anal
 
 ## Publish
 
-After the PR is merged, open **Repository settings → Pages → Build and deployment → Source → GitHub Actions**. The included workflow publishes updates to `https://ronnieser.github.io/Veronica_Website/` when `main` changes. If Pages was enabled after the merge, run **Actions → Publish website → Run workflow** once.
+The repository is `RonnieSer/ronnieser.github.io`, and the website is published at `https://ronnieser.github.io/`. In **Repository settings → Pages → Build and deployment**, choose **GitHub Actions** as the source. The included workflow publishes updates when `main` changes. If Pages was enabled after the merge, run **Actions → Publish website → Run workflow** once.
 
-All links support the GitHub Pages repository prefix. For another static host, build with `npm run build` and publish `dist/`; the default base is `/`. A custom domain can be configured in GitHub Pages settings; the workflow reads the deployment's origin and base automatically. See the [official Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
+Both the build check and deployment use the root path `/`, so styles, images, and navigation load directly from this address. For another static host, build with `npm run build` and publish `dist/`; the default base is `/`. A custom domain can be configured in GitHub Pages settings; the workflow reads the deployment's origin automatically. See the [official Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
 
 ## Design files
 

@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
-    if: github.repository == 'RonnieSer/Veronica_Website'
+    if: github.repository == 'RonnieSer/ronnieser.github.io'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,7 +28,7 @@ jobs:
       - run: npm run build
         env:
           SITE_URL: ${{ steps.pages.outputs.origin }}
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          BASE_PATH: /
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

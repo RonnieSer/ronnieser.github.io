@@ -19,4 +19,4 @@ jobs:
       - run: npm run check
       - run: npm run build
         env:
-          BASE_PATH: /Veronica_Website/
+          BASE_PATH: /
