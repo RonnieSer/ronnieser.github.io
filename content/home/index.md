@@ -3,10 +3,10 @@ title: Veronica Serrano
 description: Veronica Serrano's portfolio. Master's student in geology.
 role: Portfolio
 selected:
-  - sample-map
-  - sample-poster
-  - sample-presentation
-  - sample-manuscript
+  - colloquium-2026
+  - couri-poster
+  - moon_poster
+  - subsurface-geophysics
 ---
 Master's student in geology.
 

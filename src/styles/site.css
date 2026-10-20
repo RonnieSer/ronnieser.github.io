@@ -29,7 +29,6 @@ main:focus { outline: none; }
 nav { display: flex; gap: 32px; font: 13px/1.5 var(--sans); }
 nav a { padding-block: 11px; border-bottom: 1px solid transparent; }
 nav a:hover, nav a[aria-current='page'] { border-bottom-color: var(--rose); }
-.nav-arrow { margin-left: 5px; color: var(--rose); font-size: 11px; }
 .home-intro { display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: 50px; padding: 25px 0 35px; min-height: 355px; }
 .home-copy h1 { font-size: clamp(46px, 6vw, 74px); font-weight: 400; letter-spacing: -2.5px; line-height: 1.15; }
 .name-dot { color: #b9798a; }
@@ -45,16 +44,14 @@ nav a:hover, nav a[aria-current='page'] { border-bottom-color: var(--rose); }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-top: 24px; margin-bottom: 25px; border-top: 1px solid var(--line); }
 .section-heading h2 { font-size: 22px; font-weight: 400; letter-spacing: -.3px; }
 .small-link { font: 11px/1.5 var(--sans); color: var(--muted); }
-.small-link span { color: var(--rose); margin-left: 10px; }
 .research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px 32px; }
 .research-card { min-width: 0; }
 .card-link { display: block; }
-.card-image { display: grid; place-items: center; aspect-ratio: 16/10; overflow: hidden; background: #f2ebe8; border: 1px solid var(--line); }
-.card-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.card-image { display: grid; place-items: center; padding: clamp(16px, 2vw, 24px); background: #fff; border: 1px solid var(--line); }
+.card-image img { display: block; width: 100%; height: auto; }
 .cover-flower { width: 100px; color: #bd909c; }
 .card-meta { display: flex; justify-content: space-between; gap: 16px; margin-top: 16px; font: 9px/1.5 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
 .research-card h3 { margin-top: 7px; font-size: 27px; font-weight: 400; line-height: 1.25; letter-spacing: -.5px; }
-.card-arrow { display: inline-block; margin-left: 10px; font: 16px var(--sans); color: var(--rose); }
 .research-card p { margin-top: 7px; color: var(--muted); font: 13px/1.6 var(--sans); max-width: 440px; }
 .card-link:hover h3 { color: var(--rose); }
 .card-link:hover .card-image { border-color: #bb8e9c; }

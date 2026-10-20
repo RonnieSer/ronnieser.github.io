@@ -32,11 +32,11 @@ const links = [{ label: 'Home', path: '' }, { label: 'Research', path: 'research
           {active !== 'Home' && <span>{name}</span>}
         </a>
         <nav aria-label="Main navigation">
-          {links.map(({ label, path }) => <a href={url(path)} aria-current={label === active ? 'page' : undefined} target={label === 'CV' ? '_blank' : undefined} rel={label === 'CV' ? 'noopener noreferrer' : undefined}>{label}{label === 'CV' && <><span aria-hidden="true" class="nav-arrow">↗</span><span class="sr-only"> (opens in a new tab)</span></>}</a>)}
+          {links.map(({ label, path }) => <a href={url(path)} aria-current={label === active ? 'page' : undefined} target={label === 'CV' ? '_blank' : undefined} rel={label === 'CV' ? 'noopener noreferrer' : undefined}>{label}{label === 'CV' && <span class="sr-only"> (opens in a new tab)</span>}</a>)}
         </nav>
       </header>
       <main id="main" tabindex="-1"><slot /></main>
-      <footer class="site-footer"><span>{name}</span><div>{home.data.email && <a href={`mailto:${home.data.email}`}>Email ↗</a>}<span>© {new Date().getFullYear()}</span></div></footer>
+      <footer class="site-footer"><span>{name}</span><div>{home.data.email && <a href={`mailto:${home.data.email}`}>Email</a>}<span>© {new Date().getFullYear()}</span></div></footer>
     </div>
   </body>
 </html>
