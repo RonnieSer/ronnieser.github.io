@@ -5,7 +5,7 @@ import { z } from 'astro/zod';
 const page = defineCollection({
   loader: glob({
     base: './content',
-    pattern: '{home,about,cv}/index.md',
+    pattern: '{home,about}/index.md',
     generateId: ({ entry }) => entry.split('/')[0]!,
   }),
   schema: z.object({
@@ -14,7 +14,6 @@ const page = defineCollection({
     role: z.string().optional(),
     email: z.email().optional(),
     selected: z.array(z.string()).optional(),
-    download: z.string().optional(),
   }),
 });
 
@@ -33,7 +32,6 @@ const research = defineCollection({
     cover: image().optional(),
     coverAlt: z.string().optional(),
     draft: z.boolean().default(false),
-    example: z.boolean().default(false),
   }),
 });
 

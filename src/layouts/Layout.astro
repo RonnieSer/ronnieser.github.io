@@ -2,13 +2,16 @@
 import '@fontsource/stix-two-text/latin-400.css';
 import '@fontsource/stix-two-text/latin-600.css';
 import '../styles/site.css';
-import Flower from '../components/Flower.astro';
+import { existsSync } from 'node:fs';
+import { Image } from 'astro:assets';
+import cosmos from '../assets/pink-cosmos.png';
 import { page, url } from '../lib/site';
-interface Props { title?: string; description?: string; active?: 'Home' | 'Research' | 'About' | 'CV'; }
-const { title, description, active = 'Home' } = Astro.props;
+interface Props { title?: string; description?: string; active?: 'Home' | 'Research' | 'About'; }
+const { title, description, active } = Astro.props;
 const home = await page('home');
 const name = home.data.title;
-const links = [{ label: 'Home', path: '' }, { label: 'Research', path: 'research/' }, { label: 'About', path: 'about/' }, { label: 'CV', path: 'cv/' }];
+const links = [{ label: 'Home', path: '' }, { label: 'Research', path: 'research/' }, { label: 'About', path: 'about/' }];
+const cv = existsSync('content/cv/cv.pdf') ? url('files/cv/cv.pdf') : undefined;
 ---
 <!doctype html>
 <html lang="en">
@@ -28,15 +31,41 @@ const links = [{ label: 'Home', path: '' }, { label: 'Research', path: 'research
     <div class="shell">
       <header class="site-header">
         <a class="brand" href={url()} aria-label={`${name} — home`}>
-          <Flower class="brand-flower" />
-          {active !== 'Home' && <span>{name}</span>}
+          <Image class="brand-flower" src={cosmos} alt="Pink cosmos flowers" width={54} densities={[1, 2, 3]} format="webp" quality={80} loading="eager" decoding="async" />
+          <span class="brand-text"><span>{name}<span class="name-dot">.</span></span>{home.data.role && <span class="brand-role">{home.data.role}</span>}</span>
         </a>
         <nav aria-label="Main navigation">
-          {links.map(({ label, path }) => <a href={url(path)} aria-current={label === active ? 'page' : undefined} target={label === 'CV' ? '_blank' : undefined} rel={label === 'CV' ? 'noopener noreferrer' : undefined}>{label}{label === 'CV' && <span class="sr-only"> (opens in a new tab)</span>}</a>)}
+          {links.map(({ label, path }) => <a href={url(path)} aria-current={label === active ? 'page' : undefined}>{label}</a>)}
+          {cv && <a href={cv} target="_blank" rel="noopener noreferrer">CV<span class="sr-only"> (PDF, opens in a new tab)</span></a>}
         </nav>
       </header>
       <main id="main" tabindex="-1"><slot /></main>
       <footer class="site-footer"><span>{name}</span><div>{home.data.email && <a href={`mailto:${home.data.email}`}>Email</a>}<span>© {new Date().getFullYear()}</span></div></footer>
     </div>
+    <script>
+      // Zoom enlarged images around the clicked point (the buttons and keyboard use the middle of the screen).
+      // Without JavaScript the zoom still works, starting from the top-left corner.
+      for (const zoom of document.querySelectorAll<HTMLInputElement>('.viewer-zoom')) {
+        const panel = zoom.closest<HTMLElement>('.viewer-panel')!;
+        const image = panel.querySelector('.viewer-stage img')!;
+        const toggle = (x = innerWidth / 2, y = innerHeight / 2) => {
+          const box = image.getBoundingClientRect();
+          const fx = Math.min(Math.max((x - box.left) / box.width, 0), 1);
+          const fy = Math.min(Math.max((y - box.top) / box.height, 0), 1);
+          zoom.checked = !zoom.checked;
+          const next = image.getBoundingClientRect();
+          panel.scrollBy(next.left + fx * next.width - x, next.top + fy * next.height - y);
+        };
+        for (const label of panel.querySelectorAll<HTMLLabelElement>(`label[for="${zoom.id}"]`)) {
+          label.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (label.classList.contains('viewer-stage')) toggle(event.clientX, event.clientY);
+            else toggle();
+          });
+        }
+        zoom.addEventListener('click', () => { zoom.checked = !zoom.checked; toggle(); });
+        panel.addEventListener('toggle', (event) => { if ((event as ToggleEvent).newState === 'closed') zoom.checked = false; });
+      }
+    </script>
   </body>
 </html>

@@ -1,86 +1,25 @@
-# Veronica's website
+# Veronica Serrano
 
-A small, static research portfolio. Warm white, rose pink, serif text, and a flower mark. Home, Research, About, and CV. The CV opens in a new tab.
+Research portfolio at [ronnieser.github.io](https://ronnieser.github.io).
 
-## Everyday editing
+## Edit
 
-Everything you write or upload goes in `content/`:
+Everything is in `content/`:
 
-```text
-content/
-  home/
-    index.md                  # Name, intro, email, selected research
-  research/
-    your-study/
-      index.md                # Title, details, and writing
-      map.png                 # Images beside the writing
-      poster.pdf              # Optional downloads, in the same folder
-  about/
-    index.md                  # Bio, education, and experience
-  cv/
-    index.md                  # Written CV or a link to your PDF
-    cv.pdf                    # Optional; add your own
-```
+- `home/index.md`: name, role, email, and which research shows on Home
+- `research/<name>/`: one folder per work, with `index.md` and its images and files. Copy a folder to add one; add `draft: true` to hide it.
+- `about/index.md`: write anything
+- `cv/cv.pdf`: your CV, opened by the CV link
 
-**Add research:** copy one of the existing folders in `content/research/`, rename it using lowercase words and hyphens, and edit `index.md`. Replace its images with yours. A minimal entry is:
+Images open enlarged when clicked.
 
-```markdown
----
-title: Your study title
-type: Poster
-description: A short sentence about the work.
-cover: ./map.png
-coverAlt: Describe what the map shows.
----
-
-A short introduction.
-
-![Describe what this image shows.](./map.png)
-
-*Figure 1. A caption.*
-
-[View the poster](./poster.pdf)
-```
-
-That is all you need. Research automatically appears on the Research page. `type` can be Poster, Map, Presentation, Manuscript, or any other label. Optional `year: 2026` and `order: 1` control its date label and order.
-
-**Choose the home page entries:** edit the `selected` list in `content/home/index.md`. Each item is a research folder name. List them in the order you want. Remove the whole `selected` field to show all published entries automatically, or use `selected: []` to show none. Add `email: your@email.com` and change `title` and `role` in this same file.
-
-**Update About:** write directly in `content/about/index.md`. Use `## Experience`, `## Education`, and paragraphs or lists, however you prefer.
-
-**Update CV:** write in `content/cv/index.md`, or place your real `cv.pdf` beside it and add `download: ./cv.pdf` to the frontmatter. The navigation always opens the CV page in a new tab; the PDF button opens the document in another tab. No example qualifications or fake PDF are included.
-
-**Hide unfinished work:** add `draft: true` to its frontmatter and remove it from Home's `selected` list. Its page and files will be excluded from the build. Files inside a published content folder are public, including unlinked attachments.
-
-**Edit the posters:** each poster folder contains `index.md`, the full-resolution `poster.png`, and a smaller `preview.webp` for fast page loading. The preview opens the full PNG when clicked. Replace the Lorem ipsum paragraph in `index.md` with your own writing. Keep the images in the same folder as the Markdown file.
-
-Use ordinary Markdown for headings, lists, images, links, tables, and code. Image links keep the original proportions and local raster images are optimized by Astro. Keep images reasonably sized; export a thumbnail image for a PDF poster and link to the full PDF. Attachments can be PDF, PowerPoint, CSV, text, BibTeX, ZIP, common images, MP4, or WebM. Prefer lowercase file names without spaces. Missing local files and broken selected entries fail the build with a clear error.
-
-## Preview locally
-
-Use Node 22.18 or newer:
+## Run
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open the address shown in the terminal. Before publishing:
+Pushing to `main` checks and publishes the site.
 
-```sh
-npm run test
-npm run check
-npm run build
-```
-
-The output is ordinary HTML and CSS in `dist/`, with no browser JavaScript, analytics, remote fonts, or database. Images load lazily and reserve their dimensions.
-
-## Publish
-
-The repository is `RonnieSer/ronnieser.github.io`, and the website is published at `https://ronnieser.github.io/`. In **Repository settings → Pages → Build and deployment**, choose **GitHub Actions** as the source. The included workflow publishes updates when `main` changes. If Pages was enabled after the merge, run **Actions → Publish website → Run workflow** once.
-
-Both the build check and deployment use the root path `/`, so styles, images, and navigation load directly from this address. For another static host, build with `npm run build` and publish `dist/`; the default base is `/`. A custom domain can be configured in GitHub Pages settings; the workflow reads the deployment's origin automatically. See the [official Astro GitHub Pages guide](https://docs.astro.build/en/guides/deploy/github/).
-
-## Design files
-
-The content folders are all you need for everyday updates. To change the design, edit `src/styles/site.css`. The small flower mark is an original SVG in `src/components/Flower.astro` and `public/flower.svg`. The detailed pink cosmos illustration in `src/assets/pink-cosmos.png` is by Andrea Stöckel, sourced from [Public Domain Pictures](https://www.publicdomainpictures.net/en/view-image.php?image=494961&picture=vintage-illustration-flowers-art), where it is offered as a public-domain image. Astro serves small responsive WebP versions with transparency; the downloaded original is preserved. The locally hosted STIX Two Text font license is included in `FONT-LICENSE.txt`. The entire site can be printed or saved as a PDF using the browser's print command.
+Illustration: Andrea Stöckel, public domain ([credits](src/assets/CREDITS.md)). Font: STIX Two Text ([license](FONT-LICENSE.txt)).
