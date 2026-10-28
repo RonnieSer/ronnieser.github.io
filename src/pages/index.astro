@@ -11,8 +11,8 @@ const entries = await selectedResearch();
 <Layout active="Home">
   <section class="home-intro" aria-labelledby="home-title">
     <div class="home-copy">
-      {home.data.role && <p class="eyebrow">{home.data.role}</p>}
       <h1 id="home-title">{home.data.title}<span class="name-dot">.</span></h1>
+      {home.data.role && <p class="role">{home.data.role}</p>}
       <div class="home-description"><Content /></div>
       {home.data.email && <a class="contact" href={`mailto:${home.data.email}`}>{home.data.email}</a>}
     </div>

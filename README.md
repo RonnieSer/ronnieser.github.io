@@ -44,7 +44,7 @@ A short introduction.
 
 That is all you need. Research automatically appears on the Research page. `type` can be Poster, Map, Presentation, Manuscript, or any other label. Optional `year: 2026` and `order: 1` control its date label and order.
 
-**Choose the home page entries:** edit the `selected` list in `content/home/index.md`. Each item is a research folder name. List them in the order you want. Remove the whole `selected` field to show all published entries automatically, or use `selected: []` to show none. Add `email: your@email.com` and change `title` and `role` in this same file.
+**Choose the home page entries:** edit the `selected` list in `content/home/index.md`. Each item is a research folder name. List them in the order you want. Remove the whole `selected` field to show all published entries automatically, or use `selected: []` to show none. Add `email: your@email.com` and change `title` in this same file. An optional `role` line appears in small capitals under the name.
 
 **Update About:** write directly in `content/about/index.md`. Use `## Experience`, `## Education`, and paragraphs or lists, however you prefer.
 
