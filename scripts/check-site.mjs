@@ -17,7 +17,7 @@ async function walk(folder) {
 await walk(root);
 for (const path of pages) {
   const html = await readFile(path, 'utf8');
-  assert.ok(!/<script\b/i.test(html), `${path}: expected no browser JavaScript`);
+  assert.ok(!/<script\b[^>]*\bsrc="(?:[a-z]+:)?\/\//i.test(html), `${path}: expected no third-party JavaScript`);
   assert.ok(Buffer.byteLength(html) < 60_000, `${path}: page is unexpectedly large`);
   assert.match(html, /<html lang="en"/, `${path}: missing page language`);
   assert.match(html, /aria-label="Main navigation"/, `${path}: missing navigation`);
@@ -42,4 +42,4 @@ for (const path of pages) {
   }
 }
 assert.ok(pages.length >= 4, 'Expected Home, Research, About, and a 404 page');
-console.log(`Verified ${pages.length} static pages: local links, CV ${hasCv ? 'PDF in a new tab' : 'link hidden (no content/cv/cv.pdf)'}, image dimensions, accessibility basics, and no browser JavaScript.`);
+console.log(`Verified ${pages.length} static pages: local links, CV ${hasCv ? 'PDF in a new tab' : 'link hidden (no content/cv/cv.pdf)'}, image dimensions, accessibility basics, and no third-party JavaScript.`);

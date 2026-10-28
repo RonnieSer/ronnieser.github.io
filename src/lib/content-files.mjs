@@ -46,7 +46,8 @@ const part = (hName, hProperties, children = []) => ({ type: 'viewerPart', data:
 const text = (value) => ({ type: 'text', value });
 
 // Clicking the image opens it enlarged over the page in a popover, with zoom. Both images stay Markdown
-// images so Astro optimizes them; the original file is one click away. No browser JavaScript.
+// images so Astro optimizes them; the original file is one click away. Works without JavaScript;
+// the script in Layout.astro zooms around the clicked point.
 function viewer(image, full, id) {
   const label = image.alt || 'Image';
   const zoom = `${id}-zoom`;

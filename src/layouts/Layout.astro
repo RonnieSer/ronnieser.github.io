@@ -42,5 +42,30 @@ const cv = existsSync('content/cv/cv.pdf') ? url('files/cv/cv.pdf') : undefined;
       <main id="main" tabindex="-1"><slot /></main>
       <footer class="site-footer"><span>{name}</span><div>{home.data.email && <a href={`mailto:${home.data.email}`}>Email</a>}<span>© {new Date().getFullYear()}</span></div></footer>
     </div>
+    <script>
+      // Zoom enlarged images around the clicked point (the buttons and keyboard use the middle of the screen).
+      // Without JavaScript the zoom still works, starting from the top-left corner.
+      for (const zoom of document.querySelectorAll<HTMLInputElement>('.viewer-zoom')) {
+        const panel = zoom.closest<HTMLElement>('.viewer-panel')!;
+        const image = panel.querySelector('.viewer-stage img')!;
+        const toggle = (x = innerWidth / 2, y = innerHeight / 2) => {
+          const box = image.getBoundingClientRect();
+          const fx = Math.min(Math.max((x - box.left) / box.width, 0), 1);
+          const fy = Math.min(Math.max((y - box.top) / box.height, 0), 1);
+          zoom.checked = !zoom.checked;
+          const next = image.getBoundingClientRect();
+          panel.scrollBy(next.left + fx * next.width - x, next.top + fy * next.height - y);
+        };
+        for (const label of panel.querySelectorAll<HTMLLabelElement>(`label[for="${zoom.id}"]`)) {
+          label.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (label.classList.contains('viewer-stage')) toggle(event.clientX, event.clientY);
+            else toggle();
+          });
+        }
+        zoom.addEventListener('click', () => { zoom.checked = !zoom.checked; toggle(); });
+        panel.addEventListener('toggle', (event) => { if ((event as ToggleEvent).newState === 'closed') zoom.checked = false; });
+      }
+    </script>
   </body>
 </html>
