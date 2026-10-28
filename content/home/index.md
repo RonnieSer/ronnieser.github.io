@@ -1,5 +1,6 @@
 ---
 title: Veronica Serrano
+role: Master's student in geology.
 description: Veronica Serrano's portfolio. Master's student in geology.
 selected:
   - colloquium-2026
@@ -7,6 +8,4 @@ selected:
   - moon_poster
   - subsurface-geophysics
 ---
-Master's student in geology.
-
-<!-- Add email: your@email.com to the frontmatter above to show a contact link. -->
+<!-- Add email: your@email.com to the frontmatter above to show an email link in the footer. -->

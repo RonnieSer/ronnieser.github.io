@@ -14,7 +14,6 @@ const { Content } = await render(entry);
   <div class="article-topline"><a href={url('research/')}>← Research</a><span>{entry.data.type}{entry.data.year ? ` · ${entry.data.year}` : ''}</span></div>
   <article class="paper">
     <header class="paper-heading">
-      {entry.data.example && <p class="example-label">Example entry · replace with your work</p>}
       <h1>{entry.data.title}</h1>
       {entry.data.description && <p>{entry.data.description}</p>}
     </header>

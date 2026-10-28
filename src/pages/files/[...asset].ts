@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { readdir, readFile } from 'node:fs/promises';
 import { extname, join } from 'node:path';
 import type { APIRoute } from 'astro';
@@ -8,6 +9,7 @@ export async function getStaticPaths() {
   const paths: { params: { asset: string }; props: { source: string } }[] = [];
   const folders = ['home', 'about', 'cv', ...(await research()).map((entry) => `research/${entry.id}`)];
   async function visit(folder: string) {
+    if (!existsSync(join('content', folder))) return;
     for (const entry of await readdir(join('content', folder), { withFileTypes: true })) {
       if (entry.name.startsWith('.')) continue;
       const path = `${folder}/${entry.name}`;

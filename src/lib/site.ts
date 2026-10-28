@@ -2,7 +2,7 @@ import { getCollection, getEntry } from 'astro:content';
 
 export const url = (path = '') => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 
-export async function page(id: 'home' | 'about' | 'cv') {
+export async function page(id: 'home' | 'about') {
   const entry = await getEntry('page', id);
   if (!entry) throw new Error(`Missing content/${id}/index.md`);
   return entry;
