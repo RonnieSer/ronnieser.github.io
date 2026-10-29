@@ -2,22 +2,34 @@
 import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import { research, url } from '../../lib/site';
+import '../../styles/essay.css';
+import { research, url, formatResearchDate } from '../../lib/site';
 export async function getStaticPaths() {
   return (await research()).map((entry) => ({ params: { id: entry.id }, props: { entry } }));
 }
 interface Props { entry: CollectionEntry<'research'>; }
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const isEssay = entry.data.layout === 'essay';
+const postDate = entry.data.date ? formatResearchDate(entry.data.date) : undefined;
 ---
 <Layout title={entry.data.title} description={entry.data.description} active="Research">
-  <div class="article-topline"><a href={url('research/')}>← Research</a><span>{entry.data.type}{entry.data.year ? ` · ${entry.data.year}` : ''}</span></div>
-  <article class="paper">
+  <div class="article-topline"><a href={url('research/')}>← Research</a>{!isEssay && <span>{entry.data.type}{postDate || entry.data.year ? ` · ${postDate || entry.data.year}` : ''}</span>}</div>
+  {isEssay ? <article class="research-essay">
+    <header class="essay-heading">
+      <h1>{entry.data.title}</h1>
+      <div class="essay-byline">
+        {entry.data.author && <span>{entry.data.author}</span>}
+        {postDate && <time datetime={entry.data.date}>{postDate}</time>}
+      </div>
+    </header>
+    <div id="essay-body" class="prose essay-body"><Content /></div>
+  </article> : <article class="paper">
     <header class="paper-heading">
       <h1>{entry.data.title}</h1>
       {entry.data.description && <p>{entry.data.description}</p>}
     </header>
     <div class="prose"><Content /></div>
-  </article>
+  </article>}
   <div class="article-bottom"><a href={url('research/')}>← All research</a><a href="#main">Back to top ↑</a></div>
 </Layout>

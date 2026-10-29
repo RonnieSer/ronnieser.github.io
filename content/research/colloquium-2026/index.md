@@ -1,6 +1,7 @@
 ---
 title: Artemis lunar observations
 type: Poster
+date: "2026-05"
 description: "Simulating Artemis Lunar Observations, a Student-Based Mission Exercise."
 order: 1
 cover: ./preview.webp

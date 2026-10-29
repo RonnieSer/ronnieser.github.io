@@ -1,6 +1,7 @@
 ---
 title: Rio Grande vegetation and water
 type: Poster
+date: "2025-08"
 description: "Spatiotemporal Analysis of Vegetation and Water Dynamics in the Rio Grande River Basin using Google Earth Engine."
 order: 2
 cover: ./preview.webp

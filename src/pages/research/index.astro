@@ -5,6 +5,6 @@ import { research } from '../../lib/site';
 const entries = await research();
 ---
 <Layout title="Research" active="Research">
-  <header class="section-heading page-top"><h1>Research</h1><span class="eyebrow">{entries.length.toString().padStart(2, '0')} entries</span></header>
+  <header class="section-heading page-top"><h1>Research</h1><span class="eyebrow">{entries.length.toString().padStart(2, '0')} entries · Newest first</span></header>
   {entries.length > 0 ? <div class="research-grid">{entries.map((entry) => <ResearchCard entry={entry} />)}</div> : <p class="empty-state">Research will appear here soon.</p>}
 </Layout>

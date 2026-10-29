@@ -2,18 +2,22 @@
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import Flower from './Flower.astro';
-import { url } from '../lib/site';
+import { url, formatResearchDate } from '../lib/site';
 interface Props { entry: CollectionEntry<'research'>; }
 const { entry } = Astro.props;
 const href = url(`research/${entry.id}/`);
+const dateLabel = entry.data.date ? formatResearchDate(entry.data.date) : entry.data.year;
 ---
 <article class="research-card">
   <a class="card-link" href={href}>
-    <div class="card-image">
+    <div class:list={['card-image', { 'card-image-photo': entry.data.layout === 'essay' }]}>
       {entry.data.cover ? <Image src={entry.data.cover} alt={entry.data.coverAlt || entry.data.title} widths={[360, 720, 1080]} sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 1000px) 45vw, 490px" loading="lazy" decoding="async" /> : <Flower class="cover-flower" />}
     </div>
-    <div class="card-meta"><span>{entry.data.type}</span><span>{entry.data.year}</span></div>
+    <div class="card-meta"><span>{entry.data.type}</span><span>{dateLabel}</span></div>
     <h3>{entry.data.title}</h3>
     {entry.data.description && <p>{entry.data.description}</p>}
   </a>
 </article>
+<style>
+  .card-image-photo img { inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+</style>
