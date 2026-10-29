@@ -1,7 +1,7 @@
 ---
 title: Subsurface geophysics
 type: Poster
-date: "2025-04"
+date: "2025-04-04"
 description: "Observing Subsurface Data Using Geophysical Methods at the Jornada Experimental Range and Tornillo Pecan Orchard."
 order: 4
 cover: ./preview.webp

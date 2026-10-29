@@ -1,7 +1,7 @@
 ---
 title: Lunar geologic mapping
 type: Poster
-date: "2026-10"
+date: "2026-10-14"
 description: "Can Semi-Automated Machine Learning Methods Standardize Lunar Geologic Mapping and Improve the Efficiency of Exploration Site Characterization?"
 order: 3
 cover: ./preview.webp
