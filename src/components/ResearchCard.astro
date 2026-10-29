@@ -11,7 +11,7 @@ const dateLabel = entry.data.date ? formatResearchDate(entry.data.date) : entry.
 <article class="research-card">
   <a class="card-link" href={href}>
     <div class:list={['card-image', { 'card-image-photo': entry.data.layout === 'essay' }]}>
-      {entry.data.cover ? <Image src={entry.data.cover} alt={entry.data.coverAlt || entry.data.title} widths={[360, 720, 1080]} sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 1000px) 45vw, 490px" loading="lazy" decoding="async" /> : <Flower class="cover-flower" />}
+      {entry.data.cover ? <Image src={entry.data.cover} alt={entry.data.coverAlt || entry.data.title} widths={[360, 720, 1080]} sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 680px) calc((100vw - 62px) / 2), (max-width: 760px) calc((100vw - 84px) / 3), (max-width: 1120px) calc((100vw - 144px) / 3), 326px" loading="lazy" decoding="async" /> : <Flower class="cover-flower" />}
     </div>
     <div class="card-meta"><span>{entry.data.type}</span><span>{dateLabel}</span></div>
     <h3>{entry.data.title}</h3>
