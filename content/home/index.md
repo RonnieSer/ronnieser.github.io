@@ -9,5 +9,6 @@ selected:
   - moon_poster
   - subsurface-geophysics
   - frontera-knapp-land
+  - jornada
 ---
 <!-- Add email: your@email.com to the frontmatter above to show an email link in the footer. -->

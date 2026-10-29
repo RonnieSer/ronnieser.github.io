@@ -19,6 +19,8 @@
 .essay-body .map-figure .viewer-open img { width: 100%; border: 1px solid var(--line); }
 .essay-body .map-figure > p:last-child { margin-top: 7px; font: 10px/1.45 var(--sans); color: var(--muted); }
 .essay-body .map-figure em { font-style: normal; }
+.essay-body .figure-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin: 18px 0 14px; align-items: start; }
+.essay-body .figure-pair .map-figure { min-width: 0; margin: 0; }
 .unit-sequence { margin: 16px 0 18px; border-top: 1px solid var(--line); }
 .unit-sequence .sequence-label { display: flex; justify-content: space-between; padding: 8px 0; font: 9px/1.4 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .unit-row { display: grid; grid-template-columns: 34px 140px 1fr; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); font: 11px/1.4 var(--sans); }
@@ -34,6 +36,7 @@ body:has(.research-essay) .site-header { min-height: 80px; }
 body:has(.research-essay) .brand-flower { height: 54px; }
 body:has(.research-essay) .site-footer { margin-top: 28px; padding-block: 16px 20px; }
 @media (max-width: 600px) {
+  .essay-body .figure-pair { grid-template-columns: minmax(0, 1fr); }
   .essay-heading { padding-top: 4px; padding-bottom: 14px; }
   .essay-heading h1 { font-size: 25px; }
   .essay-body { margin-top: 18px; }
