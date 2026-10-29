@@ -28,9 +28,11 @@ export async function selectedResearch() {
   const home = await page('home');
   const entries = await research();
   if (home.data.selected === undefined) return entries;
-  return home.data.selected.map((id) => {
-    const entry = entries.find((item) => item.id === id);
-    if (!entry) throw new Error(`Home selected entry "${id}" is missing or a draft. Update content/home/index.md.`);
-    return entry;
-  });
+  const selectedIds = new Set(home.data.selected);
+  for (const id of selectedIds) {
+    if (!entries.some((entry) => entry.id === id)) {
+      throw new Error(`Home selected entry "${id}" is missing or a draft. Update content/home/index.md.`);
+    }
+  }
+  return entries.filter((entry) => selectedIds.has(entry.id));
 }
