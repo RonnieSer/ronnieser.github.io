@@ -38,7 +38,7 @@ Much of the work involved returning to the same question: does the rock on one h
 
 ![Simplified illustrative redraw of the initial Knapp Land mapping concept, with blue and yellow regions, narrow red and salmon bands, and green strips outlined on an off-white background.](./working-map-refined.png)
 
-*Figure 2. A simplified, AI-assisted redraw of a group member’s early working map. It retains the broad layout of the initial interpretation; boundaries are schematic. See Figure 1 for the completed geological map.*
+*Figure 2. Initial map mockup.*
 
 </div>
 
