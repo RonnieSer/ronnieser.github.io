@@ -1,11 +1,90 @@
 ---
+import { Image } from 'astro:assets';
 import { render } from 'astro:content';
+import portrait from '../../content/about/veronica-serrano.jpg';
 import Layout from '../layouts/Layout.astro';
 import { page } from '../lib/site';
 const entry = await page('about');
 const { Content } = await render(entry);
+const elsewhere = [
+  { label: 'GitHub', href: 'https://github.com/RonnieSer' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/vmserra' },
+];
 ---
-<Layout title={entry.data.title} active="About">
+<Layout title={entry.data.title} description={entry.data.description} active="About">
   <header class="section-heading page-top"><h1>{entry.data.title}</h1></header>
-  <article class="prose about-prose"><Content /></article>
+  <div class="about-layout">
+    <div class="about-introduction">
+      <article class="prose about-prose"><Content /></article>
+      {entry.data.email && <section class="about-contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="eyebrow">Say hello</h2>
+        <a href={`mailto:${entry.data.email}`}>{entry.data.email}</a>
+      </section>}
+    </div>
+    <aside class="about-sidebar" aria-label="Photo and links">
+      <Image
+        class="about-portrait"
+        src={portrait}
+        alt="Veronica Serrano at the American Geophysical Union meeting."
+        width={640}
+        widths={[320, 640, 960]}
+        sizes="(max-width: 700px) min(100vw - 40px, 400px), 320px"
+        format="webp"
+        quality={85}
+        loading="eager"
+        decoding="async"
+      />
+      <section class="about-links" aria-labelledby="elsewhere-heading">
+        <h2 id="elsewhere-heading" class="eyebrow">Find me elsewhere</h2>
+        <ul>
+          {elsewhere.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}
+        </ul>
+      </section>
+    </aside>
+  </div>
 </Layout>
+
+<style>
+  .about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(220px, 28vw, 320px);
+    gap: clamp(36px, 6vw, 80px);
+    align-items: start;
+  }
+  .about-prose { font-size: 18px; line-height: 1.75; }
+  .about-prose :global(p) { margin-bottom: 24px; }
+  .about-prose :global(p:last-child) { margin-bottom: 0; }
+  .about-contact { margin-top: 36px; }
+  .about-contact h2 { margin-bottom: 12px; font-weight: 400; }
+  .about-contact a {
+    font-size: 18px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--line);
+    overflow-wrap: anywhere;
+  }
+  .about-portrait {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+  .about-links { margin-top: 28px; }
+  .about-links h2 { margin-bottom: 12px; font-weight: 400; }
+  .about-links ul { list-style: none; padding: 0; margin: 0; }
+  .about-links a {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    line-height: 1.5;
+  }
+  .about-links a:hover, .about-contact a:hover { color: var(--rose); }
+  @media (max-width: 700px) {
+    .about-layout { grid-template-columns: 1fr; gap: 36px; }
+    .about-prose { font-size: 17px; }
+    .about-sidebar { width: 100%; max-width: 400px; }
+    .about-contact { margin-top: 28px; }
+  }
+</style>
