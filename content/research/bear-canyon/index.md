@@ -7,9 +7,9 @@ location: Bear Canyon · Southeastern California
 author: Veronica Serrano
 date: "2025-01-20"
 order: 0
-cover: ./canyon.webp
-coverAlt: "Layered pink and tan canyon walls beneath a clear blue sky at Bear Canyon."
-heroCaption: "Bedding and weathered canyon walls, photographed during fieldwork."
+cover: ./cover.webp
+coverAlt: "Weathered rock pinnacles and rugged canyon walls beneath a deep blue sky at Bear Canyon."
+heroCaption: "Weathered rock pinnacles at Bear Canyon, photographed during fieldwork."
 ---
 A canyon is more than a gap in the landscape. Its walls expose a sequence of events: volcanic eruptions, the movement of sediment, deformation, and erosion. In Bear Canyon, those events can be read in the rocks themselves—and in the boundaries between them.
 
