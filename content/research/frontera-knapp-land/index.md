@@ -5,8 +5,8 @@ type: Field essay
 layout: essay
 author: Veronica Serrano
 date: "2024-12-05"
-cover: ./geologic-map.webp
-coverAlt: "Geological map of Knapp Land Nature Preserve, with blue quartzite ridges, yellow surface deposits, red fault traces, and a detailed legend."
+cover: ./cover.webp
+coverAlt: "Desert hills and an arroyo at Knapp Land, with yucca in the foreground and neighborhoods beyond."
 ---
 At the beginning of the semester, creating a geological map for a local conservation organization felt like an unfamiliar challenge. By the end, the task had become a way to connect what we learned in the field with the people who live alongside the Franklin Mountains. Our map of Knapp Land Nature Preserve was designed to make that nearby geological history easier to see and understand.
 
