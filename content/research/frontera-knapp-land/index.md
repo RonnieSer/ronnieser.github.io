@@ -36,9 +36,9 @@ Much of the work involved returning to the same question: does the rock on one h
 
 <div class="map-figure" style="max-width: 430px; margin-inline: auto;">
 
-![Photograph of an early digital working map, with colored geological units drawn over aerial imagery of Knapp Land Nature Preserve.](./working-map.webp)
+![Simplified illustrative redraw of the initial Knapp Land mapping concept, with blue and yellow regions, narrow red and salmon bands, and green strips outlined on an off-white background.](./working-map-refined.png)
 
-*Figure 2. An early map prepared by a group member, reproduced from the project report. It records the group’s initial interpretation before the final map incorporated the requested preserve boundaries, detailed legend, and additional symbols.*
+*Figure 2. A simplified, AI-assisted redraw of a group member’s early working map. It retains the broad layout of the initial interpretation; boundaries are schematic. See Figure 1 for the completed geological map.*
 
 </div>
 
@@ -91,7 +91,7 @@ For me, the project changed mapping from an intimidating deliverable into a coll
 
 ## Sources
 
-This essay is adapted from my *Frontera Final Project* report. Field observations and reflections come from that report; mapped units, symbols, and descriptions follow the accompanying *Geologic Map of Knapp Land Nature Preserve*. The map is a collaborative class product, credited to UTEP’s Department of Earth, Environmental and Resource Sciences, Fall 2024 Community Engagement Class. The early working map is reproduced from the report and credited there to a group member.
+This essay is adapted from my *Frontera Final Project* report. Field observations and reflections come from that report; mapped units, symbols, and descriptions follow the accompanying *Geologic Map of Knapp Land Nature Preserve*. The map is a collaborative class product, credited to UTEP’s Department of Earth, Environmental and Resource Sciences, Fall 2024 Community Engagement Class. The early working map is presented as a simplified illustrative redraw of the report image, which is credited there to a group member.
 
 <div class="source-note">
 
