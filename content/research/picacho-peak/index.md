@@ -18,7 +18,7 @@ The map brings together unit boundaries, fault traces, observation points, and s
 
 <div class="map-figure">
 
-![Geological field map of the Picacho Peak study area showing blue Orocopia Schist, green orthogneiss, and purple Winterhaven Formation over terrain imagery. Thin red fault traces, observation points, orientation measurements, a north arrow, and a 200-metre scale bar are retained.](./geologic-map.png)
+![Geological field map of the Picacho Peak study area showing blue Orocopia Schist, green orthogneiss, and purple Winterhaven Formation over terrain imagery. Bold black unit boundaries, red fault traces, numbered observation points, orientation measurements, a north arrow, and a 200-metre scale bar are shown.](./geologic-map.png)
 
 *Figure 1. The project field map, cleaned up for presentation. The unused cross-section line has been removed and the unit legend corrected. Select the map to enlarge it.*
 
