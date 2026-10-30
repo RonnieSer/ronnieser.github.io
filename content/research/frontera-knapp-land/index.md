@@ -91,7 +91,7 @@ For me, the project changed mapping from an intimidating deliverable into a coll
 
 ## Sources
 
-This essay is adapted from my *Frontera Final Project* report. Field observations and reflections come from that report; mapped units, symbols, and descriptions follow the accompanying *Geologic Map of Knapp Land Nature Preserve*. The map is a collaborative class product, credited to UTEP’s Department of Earth, Environmental and Resource Sciences, Fall 2024 Community Engagement Class. The early working map is presented as a simplified illustrative redraw of the report image, which is credited there to a group member.
+This essay is adapted from my *Frontera Final Project* report. Field observations and reflections come from that report; mapped units, symbols, and descriptions follow the accompanying *Geologic Map of Knapp Land Nature Preserve*. The map is a collaborative class product, credited to UTEP’s Department of Earth, Environmental and Resource Sciences, Fall 2024 Community Engagement Class. The initial map mockup is based on the report image, which is credited there to a group member.
 
 <div class="source-note">
 
