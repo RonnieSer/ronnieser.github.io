@@ -20,11 +20,11 @@ The map brings together unit boundaries, fault traces, observation points, and s
 
 ![Geological field map of the Picacho Peak study area showing blue Orocopia Schist, green orthogneiss, and purple Winterhaven Formation over terrain imagery. Bold black unit boundaries, red fault traces, numbered observation points, orientation measurements, a north arrow, and a 200-metre scale bar are shown.](./geologic-map.png)
 
-*Figure 1. The project field map, cleaned up for presentation. The unused cross-section line has been removed and the unit legend corrected. Select the map to enlarge it.*
+*Figure 1. Geological field map of the Picacho Peak study area. Select the map to enlarge it.*
 
 </div>
 
-The observation labels help connect the colored areas to what we saw on the ground. Notes about schist, metaconglomerate, limestone, and breccia record particular exposures. Between those locations, tracing a contact required comparing neighboring outcrops and considering where sediment concealed the bedrock.
+The numbered observations and structural symbols connect the colored areas to measurements collected on the ground. Our field notes also record exposures of schist, metaconglomerate, limestone, and breccia. Between those locations, tracing a contact required comparing neighboring outcrops and considering where sediment concealed the bedrock.
 
 ## Recognizing the rocks
 
@@ -78,7 +78,7 @@ Where the units approached one another, the arrangement could change over a shor
 
 ![Desert outcrop with a thin red annotation tracing the interpreted contact between a brecciated zone on the left and Winterhaven rocks on the right.](./fault-contact.jpeg)
 
-*Figure 6. The annotated fault-zone photograph from the report. Its red line marks the interpreted contact, separate from the cross-section line removed from the map.*
+*Figure 6. The annotated fault-zone photograph from the report. Its red line marks the interpreted contact.*
 
 </div>
 
@@ -112,7 +112,7 @@ For me, the value of the project was in connecting observations across scales. M
 
 ## Sources
 
-Adapted from my *Picacho Peak Project Report* and its accompanying *Picacho Project 2* field map. The photographs, local rock descriptions, structural observations, and stereonet come from the report. The map has been cleaned up for presentation, with the unused cross-section line removed and the blue and green legend entries corrected. Regional context is identified separately in the text.
+Adapted from my *Picacho Peak Project Report* and its accompanying *Picacho Project 2* field map. The photographs, local rock descriptions, structural observations, and stereonet come from the report. Regional context is identified separately in the text.
 
 <div class="source-note">
 
