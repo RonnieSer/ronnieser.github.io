@@ -5,8 +5,8 @@ type: Field essay
 layout: essay
 author: Veronica Serrano
 date: "2025-01-20"
-cover: ./geologic-map.png
-coverAlt: "Geological field map of the Picacho Peak study area, with Orocopia Schist in blue, orthogneiss in green, and the Winterhaven Formation in purple."
+cover: ./cover.webp
+coverAlt: "Rocky desert ridges and Picacho Peak beneath a clear blue sky."
 ---
 At Picacho Peak in southeastern California, tracing a rock unit across a hillside often meant following it toward a fault. Over four days of fieldwork near Winterhaven, our mapping connected three contrasting rock packages: the Orocopia Schist, orthogneiss, and the Winterhaven Formation. Their contacts and changing orientations helped us interpret a landscape shaped by fault movement and folding.
 
